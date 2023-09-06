@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<style>
+		body {
+			
+      background-image: url("/static/planet.gif");
+			display: flex; /* Add flex display */
+			flex-direction: column; /* Set flex direction to column */
+			align-items: center; /* Center items vertically */
+			justify-content: center; /* Center items horizontally */
+			height: 80vh; /* Set body height to viewport height */
+      
+		}
+		h1 {
+			text-align: center;
+      
+		}
+		form {
+			background-color: #585858;
+			padding: 50px;
+			text-align: center;
+			max-width: 400px; /* Set max width for the form */
+		}
+		label {
+			display: block;
+			text-align: center;
+			margin: 10px;
+			float: left;
+            font-weight: bold;
+		}
+		input {
+			display: block;
+			margin: 10px auto;
+			padding: 5px;
+			border: none;
+			border-radius: 3px;
+			box-shadow: 1px 1px 1px grey;
+			width: 100%;
+		}
+		input[type="submit"] {
+			background-color: #df9fbf;
+			color: white;
+			cursor: pointer;
+			font-size: 1.2em;
+			font-weight: bold;
+			padding: 10px;
+			width: auto;
+			max-width: 150px;
+			clear: both;
+		}
+	</style>
+</head>
+<body>
+	<h1>Login</h1>
+	<form onsubmit="return login()">
+		<label for="username">Username:</label>
+		<input type="text" id="username" name="username">
+		<label for="password">Password:</label>
+		<div style="position: relative">
+			<input type="password" id="password" name="password">
+			<button type="button" onclick="togglePassword()">Show Password</button>
+		</div>
+		<input type="submit" value="Submit">
+	</form>
+
+	<script>
+		function login() {
+			var username = document.getElementById("username").value;
+			var password = document.getElementById("password").value;
+
+			if (username === "sushantst15@gmail.com" && password === "ME5048@1") {
+				window.location.href = "index.html";
+				return false;
+			} else {
+				alert("Invalid username or password");
+				return false;
+			}
+		}
+
+		function togglePassword() {
+			var passwordInput = document.getElementById("password");
+			if (passwordInput.type === "password") {
+				passwordInput.type = "text";
+			} else {
+				passwordInput.type = "password";
+			}
+		}
+	</script>
+</body>
+</html>
